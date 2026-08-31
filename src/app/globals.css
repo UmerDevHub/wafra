@@ -16,11 +16,20 @@
   --font-sans: var(--font-sans), "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/* Sharp Square Rule for All Boxes, Cards, Inputs, and Buttons */
+*, ::before, ::after {
+  border-radius: 0px !important;
+}
+
 @layer base {
   body {
     background-color: #FAF6F1;
     color: #1F1B18;
     font-family: var(--font-sans);
+  }
+
+  button, input, select, textarea, div, section, article, img, a, span {
+    border-radius: 0px !important;
   }
 
   /* Global Cursor Rules for Interactive Feedback */

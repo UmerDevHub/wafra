@@ -29,8 +29,8 @@ export default function Newsletter() {
 
         {/* Form or Success State */}
         {isSubmitted ? (
-          <div className="bg-white/20 backdrop-blur-md text-white py-3.5 px-6 rounded-full inline-flex items-center gap-2 text-sm font-medium">
-            <Check className="w-4 h-4 text-white" />
+          <div className="bg-white/20 backdrop-blur-md text-white py-3.5 px-6 border border-white/40 inline-flex items-center gap-2 text-sm font-medium">
+            <Check className="w-4 h-4 text-white stroke-[2]" />
             <span>Welcome to the Wafra family! 10% discount code sent.</span>
           </div>
         ) : (
@@ -44,11 +44,11 @@ export default function Newsletter() {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full sm:w-72 px-5 py-3.5 rounded-full bg-white text-ink text-sm placeholder:text-body/60 focus:outline-none focus:ring-2 focus:ring-ink"
+              className="w-full sm:w-72 px-5 py-3.5 bg-white text-[#1F1B18] text-sm placeholder:text-[#5B534B]/60 border border-white focus:outline-none focus:ring-2 focus:ring-black"
             />
             <button
               type="submit"
-              className="w-full sm:w-auto bg-ink hover:bg-black text-white px-7 py-3.5 rounded-full font-bold text-sm transition shadow-md whitespace-nowrap"
+              className="w-full sm:w-auto bg-[#1F1B18] hover:bg-black text-white px-7 py-3.5 font-bold uppercase tracking-wider text-xs sm:text-sm border border-[#1F1B18] transition shadow-md whitespace-nowrap btn-tactile cursor-pointer"
             >
               Get 10% Off
             </button>
