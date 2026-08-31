@@ -54,13 +54,13 @@ export default function CartDrawer() {
       />
 
       {/* Drawer Container */}
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-[420px] bg-white border-l border-[#E5E1DC] shadow-2xl flex flex-col justify-between transform transition-transform duration-300 ease-in-out animate-slideInRight">
+      <div className="fixed inset-y-0 right-0 max-w-full flex">
+        <div className="w-screen max-w-full sm:max-w-[420px] bg-white border-l border-[#E5E1DC] shadow-2xl flex flex-col justify-between transform transition-transform duration-300 ease-in-out animate-slideInRight">
           {/* Top Header */}
-          <div className="p-6 border-b border-[#EFEAE3] flex items-center justify-between">
+          <div className="px-4 py-4 sm:px-6 sm:py-5 border-b border-[#EFEAE3] flex items-center justify-between">
             <div className="flex items-center gap-2">
               <ShoppingBag className="w-5 h-5 text-[#C1663B]" />
-              <h3 className="font-serif text-xl text-[#1F1B18] font-bold">
+              <h3 className="font-serif text-lg sm:text-xl text-[#1F1B18] font-bold">
                 Your Cart ({totalCount})
               </h3>
             </div>
@@ -74,27 +74,27 @@ export default function CartDrawer() {
           </div>
 
           {/* Middle Body */}
-          <div className="flex-1 overflow-y-auto p-6 space-y-5">
+          <div className="flex-1 overflow-y-auto px-4 py-4 sm:px-6 sm:py-5 space-y-4 sm:space-y-5">
             {/* Free Shipping Progress Meter */}
-            <div className="bg-[#FAF6F1] p-4 border border-[#E5E1DC] space-y-2">
-              <div className="flex items-center justify-between text-xs font-bold">
-                <span className="flex items-center gap-1.5 text-[#1F1B18]">
-                  <Truck className="w-4 h-4 text-[#C1663B]" />
+            <div className="bg-[#FAF6F1] p-3 sm:p-4 border border-[#E5E1DC] space-y-2">
+              <div className="flex items-center justify-between text-xs font-bold gap-2">
+                <span className="flex items-center gap-1.5 text-[#1F1B18] truncate">
+                  <Truck className="w-4 h-4 text-[#C1663B] shrink-0" />
                   {amountNeededForFreeShipping === 0 ? (
-                    <span className="text-[#C1663B]">
+                    <span className="text-[#C1663B] font-bold">
                       Free UAE Delivery unlocked!
                     </span>
                   ) : (
-                    <span>
+                    <span className="truncate">
                       Add{" "}
                       <span className="text-[#C1663B]">
                         AED {amountNeededForFreeShipping}
                       </span>{" "}
-                      more for Free UAE Delivery
+                      more for Free Delivery
                     </span>
                   )}
                 </span>
-                <span className="text-[#C1663B] font-semibold">
+                <span className="text-[#C1663B] font-semibold shrink-0">
                   {freeShippingProgress}%
                 </span>
               </div>
@@ -201,23 +201,23 @@ export default function CartDrawer() {
 
           {/* Bottom Footer & Checkout Actions */}
           {items.length > 0 && (
-            <div className="p-6 border-t border-[#EFEAE3] bg-[#FAF6F1] space-y-4">
-              <div className="flex items-center justify-between text-base font-bold text-[#1F1B18]">
+            <div className="px-4 py-4 sm:px-6 sm:py-5 border-t border-[#EFEAE3] bg-[#FAF6F1] space-y-3.5 sm:space-y-4">
+              <div className="flex items-center justify-between text-sm sm:text-base font-bold text-[#1F1B18]">
                 <span>Subtotal</span>
-                <span className="text-xl font-serif font-bold text-[#C1663B]">
+                <span className="text-lg sm:text-xl font-serif font-bold text-[#C1663B]">
                   AED {subtotal}
                 </span>
               </div>
-              <p className="text-[11px] text-[#6E675F] text-center">
+              <p className="text-[10px] sm:text-[11px] text-[#6E675F] text-center">
                 Free UAE Shipping · 100% Cash on Delivery (COD) Only
               </p>
 
               {/* Checkout Button */}
-              <div className="space-y-2.5">
+              <div className="space-y-2">
                 <Link
                   href="/checkout"
                   onClick={closeCart}
-                  className="w-full bg-[#C1663B] hover:bg-[#A8552E] text-white py-3.5 font-bold uppercase tracking-wider text-sm border border-[#C1663B] shadow-[0_4px_14px_rgba(193,102,59,0.25)] transition flex items-center justify-center gap-2 btn-tactile cursor-pointer"
+                  className="w-full bg-[#C1663B] hover:bg-[#A8552E] text-white py-3 sm:py-3.5 font-bold uppercase tracking-wider text-xs sm:text-sm border border-[#C1663B] shadow-[0_4px_14px_rgba(193,102,59,0.25)] transition flex items-center justify-center gap-2 btn-tactile cursor-pointer"
                 >
                   <span>Proceed to Checkout</span>
                   <ArrowRight className="w-4 h-4 stroke-[1.5]" />
@@ -226,7 +226,7 @@ export default function CartDrawer() {
                 <Link
                   href="/cart"
                   onClick={closeCart}
-                  className="block text-center text-xs font-semibold text-[#6E675F] hover:text-[#C1663B] transition py-1 cursor-pointer"
+                  className="block text-center text-xs font-semibold text-[#6E675F] hover:text-[#C1663B] transition py-0.5 cursor-pointer"
                 >
                   View Full Cart Details
                 </Link>
