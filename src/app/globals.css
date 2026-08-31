@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sand: #FAF6F1;
+  --color-beige: #F0E4D8;
+  --color-terracotta: #C1663B;
+  --color-[#C1663B]: #C1663B;
+  --color-[#A8552E]: #A8552E;
+  --color-sage: #8A9A7E;
+  --color-gold: #C9A24B;
+  --color-star: #E0A94B;
+  --color-ink: #1F1B18;
+  --color-body: #5B534B;
+
+  --font-serif: var(--font-serif), "Fraunces", "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-sans), "Inter", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Sharp Square No-Border-Radius Rule */
+*, ::before, ::after {
+  border-radius: 0px !important;
+}
+
+@layer base {
+  body {
+    background-color: #FAF6F1;
+    color: #1F1B18;
+    font-family: var(--font-sans);
+  }
+
+  button, input, select, textarea, div, section, article, img, a, span {
+    border-radius: 0px !important;
+  }
+
+  /* Global Cursor Rules for Interactive Feedback */
+  button, 
+  a, 
+  select, 
+  [role="button"], 
+  input[type="checkbox"], 
+  input[type="radio"], 
+  label, 
+  .clickable {
+    cursor: pointer;
+  }
+
+  button:disabled, 
+  input:disabled, 
+  select:disabled, 
+  [aria-disabled="true"] {
+    cursor: not-allowed !important;
+    opacity: 0.6;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="search"],
+  textarea {
+    cursor: text;
+  }
+}
+
+/* Refined Modern Tactile Shadows & Soft Hairline Borders */
+.shadow-refined {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-sharp-subtle {
+  box-shadow: 2px 2px 0px #E5E1DC;
+}
+
+.shadow-sharp-terracotta {
+  box-shadow: 2px 2px 0px #C1663B;
+}
+
+.btn-tactile {
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-tactile:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(193, 102, 59, 0.15);
+}
+
+.btn-tactile:active {
+  transform: translateY(0px);
+}
+
+.btn-tactile:disabled {
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes continuousGlowPulse {
+  0%, 100% {
+    box-shadow: 0 0 3px rgba(16, 185, 129, 0.15);
+    background-color: #ECFDF5;
+    border-color: #A7F3D0;
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.45), 0 0 6px rgba(16, 185, 129, 0.3);
+    background-color: #D1FAE5;
+    border-color: #34D399;
+  }
+}
+
+.animate-glow-1s {
+  animation: continuousGlowPulse 1s infinite ease-in-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 22s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
