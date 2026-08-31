@@ -12,13 +12,8 @@
   --color-ink: #1F1B18;
   --color-body: #5B534B;
 
-  --font-serif: var(--font-serif), "Fraunces", "Playfair Display", Georgia, serif;
-  --font-sans: var(--font-sans), "Inter", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-/* Sharp Square No-Border-Radius Rule */
-*, ::before, ::after {
-  border-radius: 0px !important;
+  --font-serif: var(--font-serif), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-sans), "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 @layer base {
@@ -26,10 +21,6 @@
     background-color: #FAF6F1;
     color: #1F1B18;
     font-family: var(--font-sans);
-  }
-
-  button, input, select, textarea, div, section, article, img, a, span {
-    border-radius: 0px !important;
   }
 
   /* Global Cursor Rules for Interactive Feedback */
