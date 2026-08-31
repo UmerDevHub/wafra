@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, use } from "react";
 import Link from "next/link";
@@ -56,7 +56,7 @@ export default function OrderConfirmationPage({
 
       {/* SUCCESS HERO */}
       <div className="bg-white border-b border-[#EDE8E2]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16 text-center space-y-5">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16 text-center space-y-5">
 
           {/* Mint rounded-square — sharp Lucide CheckCircle2, 1.5px stroke */}
           <div className="inline-flex items-center justify-center w-[72px] h-[72px] bg-[#E6F5EE] border-2 border-[#B8DFC9] rounded-2xl mx-auto shadow-sm">
@@ -107,7 +107,7 @@ export default function OrderConfirmationPage({
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-8 space-y-6">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-8 space-y-6">
 
         {/* Payment Reminder Banner */}
         <div className="bg-[#FFFCF0] border border-[#F5E6B2] border-l-[5px] border-l-[#E09900] rounded-xl p-5 sm:p-6 flex items-start gap-4 shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
