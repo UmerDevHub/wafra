@@ -130,8 +130,11 @@ export default function CheckoutPage() {
 
     const randomOrderId = `WAF-${Math.floor(100000 + Math.random() * 900000)}`;
 
+    // Immediately flag order as placed — renders a processing screen right away
+    // so neither the checkout form nor the empty-cart screen ever flashes.
+    setIsOrderPlaced(true);
+
     setTimeout(() => {
-      setIsOrderPlaced(true);
       clearCart();
       router.push(
         `/checkout/confirmation?orderId=${randomOrderId}&total=${grandTotal}&name=${encodeURIComponent(
@@ -140,7 +143,7 @@ export default function CheckoutPage() {
           formData.area
         )}&emirate=${encodeURIComponent(formData.emirate)}`
       );
-    }, 1000);
+    }, 900);
   };
 
   if (!isClient) {
@@ -151,8 +154,24 @@ export default function CheckoutPage() {
     );
   }
 
-  // Empty cart view — skip if order was just placed (redirect in flight)
-  if (cartList.length === 0 && !isOrderPlaced) {
+  // Order just placed — show processing screen immediately, no cart/form flash
+  if (isOrderPlaced) {
+    return (
+      <main className="min-h-screen bg-[#FAF6F1] flex items-center justify-center p-4">
+        <div className="text-center space-y-5 animate-fadeIn">
+          {/* Spinning ring */}
+          <div className="w-16 h-16 mx-auto rounded-full border-4 border-[#E5E1DC] border-t-[#C1663B] animate-spin" />
+          <div className="space-y-1">
+            <p className="font-serif text-xl font-bold text-[#1F1B18]">Confirming your order…</p>
+            <p className="text-xs text-[#6E675F]">Please wait while we prepare your confirmation.</p>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  // Empty cart view
+  if (cartList.length === 0) {
     return (
       <main className="min-h-screen bg-[#FAF6F1] flex items-center justify-center p-4">
         <div className="bg-white p-8 sm:p-12 border border-[#E5E1DC] shadow-[0_1px_4px_rgba(0,0,0,0.04)] text-center space-y-4 max-w-md w-full animate-fadeIn">
