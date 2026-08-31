@@ -116,9 +116,9 @@ export default function Hero({ onShopNow }: HeroProps) {
         ))}
       </div>
 
-      {/* Floating Slide Text Content */}
-      <div className="absolute inset-0 z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 h-full flex flex-col justify-center pointer-events-none">
-        <div className="max-w-[280px] sm:max-w-xl text-white space-y-3 sm:space-y-4 pointer-events-auto">
+      {/* Floating Slide Text Content — shifted towards bottom with generous top margin */}
+      <div className="absolute inset-0 z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 h-full flex flex-col justify-center pt-8 sm:pt-12 md:pt-14 pointer-events-none">
+        <div className="max-w-[280px] sm:max-w-xl text-white space-y-3 sm:space-y-4 pointer-events-auto transform translate-y-2 sm:translate-y-4">
           <span
             key={`badge-${activeSlide}`}
             className="inline-block text-[#C9A24B] text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase animate-fadeIn"
