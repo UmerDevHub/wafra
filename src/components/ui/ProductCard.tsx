@@ -59,6 +59,16 @@ export default function ProductCard({
     setSelectedVariantIndex(index);
   };
 
+  // Calculate real discount % from wasPrice and price strings (e.g. "AED 129" -> 129)
+  const wasPriceNum = product.wasPrice
+    ? parseFloat(product.wasPrice.replace(/[^0-9.]/g, ""))
+    : 0;
+  const priceNum = parseFloat(product.price.replace(/[^0-9.]/g, ""));
+  const discountPct =
+    wasPriceNum > 0
+      ? Math.round(((wasPriceNum - priceNum) / wasPriceNum) * 100)
+      : 0;
+
   const isLowStock = product.stockCount !== undefined && product.stockCount <= 10;
 
   if (compact) {
@@ -228,7 +238,7 @@ export default function ProductCard({
               {product.price}
             </span>
             <span className="text-[9px] font-bold text-[#C1663B] bg-[#FDF0EB] border border-[#F5D5C6] px-1.5 py-0.5 uppercase tracking-wider">
-              31% OFF
+              {discountPct}% OFF
             </span>
           </div>
 
