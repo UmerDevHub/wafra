@@ -56,7 +56,7 @@ export default function OrderConfirmationPage({
 
       {/* SUCCESS HERO */}
       <div className="bg-white border-b border-[#EDE8E2]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16 text-center space-y-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 text-center space-y-5">
 
           {/* Mint rounded-square — sharp Lucide CheckCircle2, 1.5px stroke */}
           <div className="inline-flex items-center justify-center w-[72px] h-[72px] bg-[#E6F5EE] border-2 border-[#B8DFC9] rounded-2xl mx-auto shadow-sm">
@@ -76,7 +76,7 @@ export default function OrderConfirmationPage({
           </h1>
 
           {/* Sub-copy */}
-          <p className="text-sm text-[#6E675F] max-w-md mx-auto leading-relaxed">
+          <p className="text-sm text-[#6E675F] max-w-lg mx-auto leading-relaxed">
             Your Cash on Delivery order has been logged. Our dispatch team is
             preparing your package for fast{" "}
             <span className="font-semibold text-[#1F1B18]">1–3 day delivery</span>{" "}
@@ -107,7 +107,7 @@ export default function OrderConfirmationPage({
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-8 space-y-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 space-y-8">
 
         {/* Payment Reminder Banner */}
         <div className="bg-[#FFFCF0] border border-[#F5E6B2] border-l-[5px] border-l-[#E09900] rounded-xl p-5 sm:p-6 flex items-start gap-4 shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
@@ -115,10 +115,10 @@ export default function OrderConfirmationPage({
             <Banknote className="w-5 h-5 text-[#B45309] stroke-[1.5]" />
           </div>
           <div className="space-y-1 min-w-0">
-            <h3 className="font-bold text-sm text-[#92400E]">
+            <h3 className="font-bold text-sm sm:text-base text-[#92400E]">
               Payment Reminder: AED {orderTotal} Cash on Delivery
             </h3>
-            <p className="text-xs text-[#B45309] leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#B45309] leading-relaxed">
               Please have{" "}
               <strong className="font-extrabold">AED {orderTotal}</strong> in
               cash ready for the courier when they deliver your parcel to{" "}
@@ -128,56 +128,56 @@ export default function OrderConfirmationPage({
         </div>
 
         {/* Two Info Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
 
           {/* Delivery Details */}
-          <div className="bg-white rounded-xl border border-[#EDE8E2] shadow-[0_2px_16px_rgba(0,0,0,0.05)] p-6 space-y-4">
+          <div className="bg-white rounded-xl border border-[#EDE8E2] shadow-[0_2px_16px_rgba(0,0,0,0.05)] p-6 sm:p-7 space-y-4">
             <div className="flex items-center gap-2.5 border-b border-[#F0EBE4] pb-3.5">
               <div className="w-8 h-8 bg-[#FEF0E8] rounded-lg flex items-center justify-center shrink-0">
                 <Truck className="w-4 h-4 text-[#C1663B] stroke-[1.5]" />
               </div>
-              <h3 className="font-bold text-sm text-[#1F1B18]">Delivery Details</h3>
+              <h3 className="font-bold text-sm sm:text-base text-[#1F1B18]">Delivery Details</h3>
             </div>
-            <div className="space-y-3 text-xs">
+            <div className="space-y-3.5 text-xs sm:text-sm">
               <div className="flex items-start gap-2.5">
-                <ShoppingBag className="w-3.5 h-3.5 text-[#9E948C] stroke-[1.5] mt-0.5 shrink-0" />
+                <ShoppingBag className="w-4 h-4 text-[#9E948C] stroke-[1.5] mt-0.5 shrink-0" />
                 <span className="font-bold text-[#1F1B18]">{customerName}</span>
               </div>
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-3.5 h-3.5 text-[#9E948C] stroke-[1.5] mt-0.5 shrink-0" />
+                <MapPin className="w-4 h-4 text-[#9E948C] stroke-[1.5] mt-0.5 shrink-0" />
                 <span className="text-[#6E675F] leading-relaxed">
                   {area}, {emirate}<br />United Arab Emirates
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-3.5 h-3.5 text-[#9E948C] stroke-[1.5] shrink-0" />
+                <Phone className="w-4 h-4 text-[#9E948C] stroke-[1.5] shrink-0" />
                 <span className="text-[#6E675F]">{phone}</span>
               </div>
-              <div className="flex items-center gap-2.5 pt-1 border-t border-[#F0EBE4]">
-                <Clock className="w-3.5 h-3.5 text-[#2A7A52] stroke-[1.5] shrink-0" />
+              <div className="flex items-center gap-2.5 pt-2 border-t border-[#F0EBE4]">
+                <Clock className="w-4 h-4 text-[#2A7A52] stroke-[1.5] shrink-0" />
                 <span className="font-semibold text-[#2A7A52]">Estimated: 1–3 Business Days</span>
               </div>
             </div>
           </div>
 
           {/* What Happens Next */}
-          <div className="bg-white rounded-xl border border-[#EDE8E2] shadow-[0_2px_16px_rgba(0,0,0,0.05)] p-6 space-y-4">
+          <div className="bg-white rounded-xl border border-[#EDE8E2] shadow-[0_2px_16px_rgba(0,0,0,0.05)] p-6 sm:p-7 space-y-4">
             <div className="flex items-center gap-2.5 border-b border-[#F0EBE4] pb-3.5">
               <div className="w-8 h-8 bg-[#EDF5F0] rounded-lg flex items-center justify-center shrink-0">
                 <MessageSquare className="w-4 h-4 text-[#2A7A52] stroke-[1.5]" />
               </div>
-              <h3 className="font-bold text-sm text-[#1F1B18]">What Happens Next?</h3>
+              <h3 className="font-bold text-sm sm:text-base text-[#1F1B18]">What Happens Next?</h3>
             </div>
-            <div className="text-xs space-y-0">
+            <div className="text-xs sm:text-sm space-y-0">
               {/* Step 1 */}
               <div className="flex items-start gap-3">
                 <div className="flex flex-col items-center">
                   <span className="w-6 h-6 rounded-full bg-[#C1663B] text-white text-[10px] font-extrabold flex items-center justify-center shrink-0">
                     1
                   </span>
-                  <div className="w-px flex-1 bg-[#E5E1DC] my-1 min-h-[24px]" />
+                  <div className="w-px flex-1 bg-[#E5E1DC] my-1.5 min-h-[30px]" />
                 </div>
-                <div className="space-y-0.5 pb-3">
+                <div className="space-y-1 pb-4">
                   <p className="font-bold text-[#1F1B18]">WhatsApp Confirmation</p>
                   <p className="text-[#6E675F] leading-relaxed">
                     Our logistics team will WhatsApp{" "}
@@ -191,7 +191,7 @@ export default function OrderConfirmationPage({
                 <span className="w-6 h-6 rounded-full bg-[#C1663B] text-white text-[10px] font-extrabold flex items-center justify-center shrink-0 mt-0.5">
                   2
                 </span>
-                <div className="space-y-0.5">
+                <div className="space-y-1">
                   <p className="font-bold text-[#1F1B18]">Doorstep Delivery</p>
                   <p className="text-[#6E675F] leading-relaxed">
                     Driver will call 30 min before arrival. Hand cash &amp; inspect
@@ -206,18 +206,23 @@ export default function OrderConfirmationPage({
         {/* Discover More Essentials */}
         <div className="bg-white rounded-xl border border-[#EDE8E2] shadow-[0_2px_16px_rgba(0,0,0,0.05)] p-6 sm:p-8 space-y-6">
           <div className="flex items-center justify-between">
-            <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1F1B18]">
-              Discover More Essentials
-            </h2>
+            <div>
+              <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1F1B18]">
+                Discover More Essentials
+              </h2>
+              <p className="text-xs sm:text-sm text-[#6E675F] mt-0.5">
+                Popular picks trending across the UAE this week
+              </p>
+            </div>
             <Link
               href="/shop-all"
-              className="text-xs font-bold text-[#C1663B] hover:text-[#A8552E] transition flex items-center gap-1"
+              className="text-xs sm:text-sm font-bold text-[#C1663B] hover:text-[#A8552E] transition flex items-center gap-1"
             >
               View Catalog
               <ArrowRight className="w-3.5 h-3.5 stroke-[2]" />
             </Link>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6">
             {bestSellersData.slice(0, 4).map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
@@ -225,10 +230,10 @@ export default function OrderConfirmationPage({
         </div>
 
         {/* Continue Shopping CTA */}
-        <div className="text-center pt-2 pb-4">
+        <div className="text-center pt-4 pb-4">
           <Link
             href="/shop-all"
-            className="inline-flex items-center justify-center gap-2.5 bg-[#C1663B] hover:bg-[#A8552E] active:scale-[0.98] text-white px-10 py-4 font-bold text-xs uppercase tracking-[0.14em] rounded-sm shadow-[0_6px_20px_rgba(193,102,59,0.30)] transition-all duration-200 cursor-pointer"
+            className="inline-flex items-center justify-center gap-2.5 bg-[#C1663B] hover:bg-[#A8552E] active:scale-[0.98] text-white px-10 py-4 font-bold text-xs sm:text-sm uppercase tracking-[0.14em] rounded-sm shadow-[0_6px_20px_rgba(193,102,59,0.30)] transition-all duration-200 cursor-pointer"
           >
             <span>Continue Shopping</span>
             <ArrowRight className="w-4 h-4 stroke-[2]" />
