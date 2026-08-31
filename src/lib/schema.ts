@@ -5,7 +5,7 @@ export const siteOrganizationSchema = {
   "@type": "Organization",
   name: "Wafra",
   url: "https://wafra.ae",
-  logo: "https://wafra.ae/images/category-selfcare.jpg",
+  logo: "https://wafra.ae/images/category-selfcare.webp",
   description:
     "Curated self-care, home ambience, and everyday lifestyle comfort essentials for modern UAE living with fast Cash on Delivery.",
   address: {
