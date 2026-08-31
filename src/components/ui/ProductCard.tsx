@@ -274,11 +274,11 @@ export default function ProductCard({
           )}
 
           {/* Single Combined Rating & Stock Line */}
-          <div className="flex items-center justify-between text-[10px] font-medium text-[#6E675F] mb-2.5 gap-1">
-            <div className="shrink-0">
+          <div className="flex items-center justify-between text-[9px] sm:text-[10px] font-medium text-[#6E675F] mb-2.5 gap-1 min-w-0">
+            <div className="shrink-0 flex items-center">
               <StarRating rating={product.rating} size="sm" />
             </div>
-            <span className={`text-[10px] whitespace-nowrap ${isLowStock ? "text-[#E05338] font-bold" : "text-[#2F5D4F] font-bold"}`}>
+            <span className={`text-[9px] sm:text-[10px] truncate shrink-0 ${isLowStock ? "text-[#E05338] font-bold" : "text-[#2F5D4F] font-bold"}`}>
               {isLowStock ? `Only ${product.stockCount} left` : "In Stock"}
             </span>
           </div>
