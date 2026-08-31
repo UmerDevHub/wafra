@@ -20,6 +20,7 @@ export default function BundleOffers({ onShopBundle }: BundleOffersProps) {
       // Treat bundle as a product entry in cart
       const bundleProduct: Product = {
         id: bundle.id,
+        slug: bundle.id,
         name: `${bundle.name} Bundle`,
         price: bundle.bundlePrice,
         wasPrice: bundle.originalPrice,
