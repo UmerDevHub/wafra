@@ -83,9 +83,11 @@ export default function StickyMobileCartBar({
               <span className="text-xs font-bold text-terracotta">
                 {product.price}
               </span>
-              <span className="text-[10px] text-body/50 line-through">
-                {product.wasPrice}
-              </span>
+              {product.wasPrice && (
+                <span className="text-[10px] text-body/50 line-through">
+                  {product.wasPrice}
+                </span>
+              )}
             </div>
           </div>
         </div>

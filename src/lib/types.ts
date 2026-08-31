@@ -30,7 +30,7 @@ export interface Product {
   slug: string;
   name: string;
   price: string;
-  wasPrice: string;
+  wasPrice?: string;
   priceNumber?: number;
   rating: number;
   image: string;

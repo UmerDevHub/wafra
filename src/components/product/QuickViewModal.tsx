@@ -116,9 +116,11 @@ export default function QuickViewModal({
                     <span className="text-xl font-bold text-terracotta">
                       {product.price}
                     </span>
-                    <span className="text-sm text-body/60 line-through">
-                      {product.wasPrice}
-                    </span>
+                    {product.wasPrice && (
+                      <span className="text-sm text-body/60 line-through">
+                        {product.wasPrice}
+                      </span>
+                    )}
                   </div>
                   {product.stockCount !== undefined && product.stockCount <= 10 && (
                     <p className="text-xs font-semibold text-[#E05338] flex items-center gap-1.5">

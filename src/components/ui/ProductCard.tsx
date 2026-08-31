@@ -135,12 +135,14 @@ export default function ProductCard({
             </Link>
 
             <div className="flex items-baseline gap-1.5 mb-1">
-              <span className="text-[11px] text-[#6E675F] line-through">
-                {product.wasPrice}
-              </span>
               <span className="text-xs font-bold text-[#C1663B]">
                 {product.price}
               </span>
+              {product.wasPrice && (
+                <span className="text-[11px] text-[#6E675F] line-through">
+                  {product.wasPrice}
+                </span>
+              )}
             </div>
 
             <StarRating rating={product.rating} size="sm" />
@@ -231,15 +233,19 @@ export default function ProductCard({
 
           {/* Pricing Row */}
           <div className="flex items-center gap-1.5 mb-1.5 flex-wrap">
-            <span className="text-[11px] text-[#6E675F] line-through">
-              {product.wasPrice}
-            </span>
             <span className="text-xs sm:text-sm font-bold text-[#C1663B]">
               {product.price}
             </span>
-            <span className="text-[9px] font-bold text-[#C1663B] bg-[#FDF0EB] border border-[#F5D5C6] px-1.5 py-0.5 uppercase tracking-wider">
-              {discountPct}% OFF
-            </span>
+            {product.wasPrice && discountPct > 0 && (
+              <>
+                <span className="text-[11px] text-[#6E675F] line-through">
+                  {product.wasPrice}
+                </span>
+                <span className="text-[9px] font-bold text-[#C1663B] bg-[#FDF0EB] border border-[#F5D5C6] px-1.5 py-0.5 uppercase tracking-wider">
+                  {discountPct}% OFF
+                </span>
+              </>
+            )}
           </div>
 
           {/* Color / Variant Swatch Squares */}

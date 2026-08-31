@@ -291,9 +291,11 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                                 <span className="text-xs font-bold text-terracotta">
                                   {prod.price}
                                 </span>
-                                <span className="text-[11px] text-body/60 line-through">
-                                  {prod.wasPrice}
-                                </span>
+                                {prod.wasPrice && (
+                                  <span className="text-[11px] text-body/60 line-through">
+                                    {prod.wasPrice}
+                                  </span>
+                                )}
                               </div>
                             </div>
                           </div>

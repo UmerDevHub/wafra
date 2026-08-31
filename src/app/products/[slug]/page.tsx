@@ -214,13 +214,21 @@ export default function ProductDetailPage({ params }: PageProps) {
                     {activePrice}
                   </span>
 
-                  <span className="text-sm text-[#6E675F] line-through font-medium">
-                    {product.wasPrice}
-                  </span>
-
-                  <span className="text-xs font-bold text-[#C1663B] bg-[#FDF0EB] border border-[#F5D5C6] px-2.5 py-0.5 uppercase tracking-wider">
-                    31% OFF
-                  </span>
+                  {product.wasPrice && (() => {
+                    const wasNum = parseFloat(product.wasPrice.replace(/[^0-9.]/g, ""));
+                    const actNum = parseFloat(activePrice.replace(/[^0-9.]/g, ""));
+                    const disc = wasNum > 0 ? Math.round(((wasNum - actNum) / wasNum) * 100) : 0;
+                    return disc > 0 ? (
+                      <>
+                        <span className="text-sm text-[#6E675F] line-through font-medium">
+                          {product.wasPrice}
+                        </span>
+                        <span className="text-xs font-bold text-[#C1663B] bg-[#FDF0EB] border border-[#F5D5C6] px-2.5 py-0.5 uppercase tracking-wider">
+                          {disc}% OFF
+                        </span>
+                      </>
+                    ) : null;
+                  })()}
                 </div>
 
                 <div className="text-[11px] font-bold text-[#C1663B] flex items-center gap-1.5 pt-0.5">
