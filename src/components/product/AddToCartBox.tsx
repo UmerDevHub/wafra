@@ -18,7 +18,7 @@ export default function AddToCartBox({
   activePrice,
 }: AddToCartBoxProps) {
   const router = useRouter();
-  const { addItem, openCart } = useCart();
+  const { addItem, addItemSilent, openCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
 
@@ -57,7 +57,7 @@ export default function AddToCartBox({
       selectedVariant: activeVariant?.name,
     };
 
-    addItem(itemToAdd, quantity);
+    addItemSilent(itemToAdd, quantity); // silent: don't open cart drawer
     router.push("/checkout");
   };
 

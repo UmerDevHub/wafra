@@ -29,6 +29,7 @@ interface CartContextType {
   closeCart: () => void;
   toggleCart: () => void;
   addItem: (product: Product, quantity?: number) => void;
+  addItemSilent: (product: Product, quantity?: number) => void;
   removeItem: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
   clearCart: () => void;
@@ -119,6 +120,26 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setIsOpen(true);
   };
 
+  // Silent version: adds to cart without opening the drawer (used by Buy Now)
+  const addItemSilent = (product: Product, quantity: number = 1) => {
+    setItems((prevItems) => {
+      const existingIndex = prevItems.findIndex(
+        (item) => item.product.id === product.id
+      );
+
+      if (existingIndex > -1) {
+        const updated = [...prevItems];
+        updated[existingIndex] = {
+          ...updated[existingIndex],
+          quantity: updated[existingIndex].quantity + quantity,
+        };
+        return updated;
+      }
+
+      return [...prevItems, { product, quantity }];
+    });
+  };
+
   const removeItem = (productId: string) => {
     setItems((prev) => prev.filter((item) => item.product.id !== productId));
   };
@@ -168,6 +189,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         closeCart,
         toggleCart,
         addItem,
+        addItemSilent,
         removeItem,
         updateQuantity,
         clearCart,

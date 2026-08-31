@@ -40,6 +40,7 @@ export default function CheckoutPage() {
   const [errors, setErrors] = useState<ShippingFormErrors>({});
   const [appliedDiscount, setAppliedDiscount] = useState<{ code: string; amount: number } | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isOrderPlaced, setIsOrderPlaced] = useState(false);
 
   // Validate Email
   const validateEmail = (val: string) => {
@@ -130,6 +131,7 @@ export default function CheckoutPage() {
     const randomOrderId = `WAF-${Math.floor(100000 + Math.random() * 900000)}`;
 
     setTimeout(() => {
+      setIsOrderPlaced(true);
       clearCart();
       router.push(
         `/checkout/confirmation?orderId=${randomOrderId}&total=${grandTotal}&name=${encodeURIComponent(
@@ -149,8 +151,8 @@ export default function CheckoutPage() {
     );
   }
 
-  // Empty cart view
-  if (cartList.length === 0) {
+  // Empty cart view — skip if order was just placed (redirect in flight)
+  if (cartList.length === 0 && !isOrderPlaced) {
     return (
       <main className="min-h-screen bg-[#FAF6F1] flex items-center justify-center p-4">
         <div className="bg-white p-8 sm:p-12 border border-[#E5E1DC] shadow-[0_1px_4px_rgba(0,0,0,0.04)] text-center space-y-4 max-w-md w-full animate-fadeIn">
