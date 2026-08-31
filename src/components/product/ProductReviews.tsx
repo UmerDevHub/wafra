@@ -31,7 +31,7 @@ export default function ProductReviews({
         verified: true,
         title: "Must-have UAE essential!",
         content: "Outstanding quality! Super fast 24-hour Cash on Delivery to Dubai Marina. Works exactly as described.",
-        photos: ["/images/category-selfcare.jpg"],
+        photos: ["/images/category-selfcare.webp"],
       },
       {
         id: "rev-def-2",

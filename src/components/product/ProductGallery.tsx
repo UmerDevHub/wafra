@@ -34,7 +34,7 @@ export default function ProductGallery({
     });
 
     while (list.length < 4) {
-      list.push(list[0] || { type: "image", url: "/images/product-neck-fan.jpg" });
+      list.push(list[0] || { type: "image", url: "/images/product-neck-fan.webp" });
     }
 
     return list;

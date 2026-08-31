@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Wafra",
     images: [
       {
-        url: "https://wafra.ae/images/hero-makeup-mirror.jpg",
+        url: "https://wafra.ae/images/hero-makeup-mirror.webp",
         width: 1200,
         height: 630,
         alt: "Wafra UAE Lifestyle Essentials",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title: "Wafra UAE — Everyday Comfort & Self-Care",
     description:
       "Curated self-care and home comfort essentials for the UAE climate with Cash on Delivery.",
-    images: ["https://wafra.ae/images/hero-makeup-mirror.jpg"],
+    images: ["https://wafra.ae/images/hero-makeup-mirror.webp"],
   },
 };
 

@@ -21,7 +21,7 @@ export default function Hero({ onShopNow }: HeroProps) {
       badge: "NEW ARRIVAL",
       headline: "Your Glow Routine, Elevated.",
       subtitle: "Salon-quality lighting, right at your vanity.",
-      image: "/images/hero-makeup-mirror.jpg",
+      image: "/images/hero-makeup-mirror.webp",
       buttonText: "Shop Now",
       productIndex: 2, // LED Makeup Mirror
       mobileObjectPos: "max-sm:object-[70%_center]",
@@ -31,7 +31,7 @@ export default function Hero({ onShopNow }: HeroProps) {
       badge: "UAE SUMMER ESSENTIAL",
       headline: "Beat The Heat Anywhere, Anytime.",
       subtitle: "Hands-free cooling tailored for the UAE climate.",
-      image: "/images/hero-neck-fan.jpg",
+      image: "/images/hero-neck-fan.webp",
       buttonText: "Shop Cooling",
       productIndex: 0, // Neck Fan
       mobileObjectPos: "max-sm:object-[88%_center]",
@@ -41,7 +41,7 @@ export default function Hero({ onShopNow }: HeroProps) {
       badge: "CRYO SKINCARE THERAPY",
       headline: "Instant Depuff & Morning Glow.",
       subtitle: "Freeze away puffiness and awaken tired skin in 5 minutes.",
-      image: "/images/hero-ice-roller.jpg",
+      image: "/images/hero-ice-roller.webp",
       buttonText: "Shop Glow Roller",
       productIndex: 1, // Face Glow Ice Roller
       mobileObjectPos: "max-sm:object-[35%_center]",

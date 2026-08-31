@@ -113,7 +113,7 @@ export default function ExitIntentPopup() {
           {/* Left Column: Image on Desktop */}
           <div className="hidden md:block md:col-span-5 relative bg-sand min-h-[380px]">
             <Image
-              src="/images/hero-makeup-mirror.jpg"
+              src="/images/hero-makeup-mirror.webp"
               alt="Wafra Lifestyle"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
