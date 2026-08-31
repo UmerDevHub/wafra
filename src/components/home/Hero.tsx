@@ -44,7 +44,7 @@ export default function Hero({ onShopNow }: HeroProps) {
       image: "/images/hero-ice-roller.webp",
       buttonText: "Shop Glow Roller",
       productIndex: 1, // Face Glow Ice Roller
-      mobileObjectPos: "max-sm:object-[35%_center]",
+      mobileObjectPos: "max-sm:object-[70%_center] sm:object-[80%_center]",
     },
   ];
 
