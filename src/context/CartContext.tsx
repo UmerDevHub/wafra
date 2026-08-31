@@ -9,7 +9,13 @@ import React, {
   ReactNode,
 } from "react";
 import { Product } from "@/lib/types";
-import { bestSellersData, FREE_SHIPPING_THRESHOLD } from "@/lib/data";
+import { bestSellersData, trendingProductsData, FREE_SHIPPING_THRESHOLD } from "@/lib/data";
+
+// All products indexed by id for fast lookup
+const ALL_PRODUCTS_MAP: Record<string, Product> = [...bestSellersData, ...trendingProductsData].reduce(
+  (acc, p) => { acc[p.id] = p; return acc; },
+  {} as Record<string, Product>
+);
 
 export interface CartItem {
   product: Product;
@@ -57,7 +63,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
     const saved = localStorage.getItem("wafra_cart_state");
     if (saved) {
       try {
-        setItems(JSON.parse(saved));
+        const parsed: CartItem[] = JSON.parse(saved);
+        // Re-merge with fresh product data so stale image paths (e.g. .jpg → .webp) are never used
+        const refreshed = parsed
+          .map((item) => {
+            const freshProduct = ALL_PRODUCTS_MAP[item.product.id];
+            return freshProduct ? { product: freshProduct, quantity: item.quantity } : null;
+          })
+          .filter(Boolean) as CartItem[];
+        setItems(refreshed.length > 0 ? refreshed : INITIAL_MOCK_ITEMS);
       } catch {
         setItems(INITIAL_MOCK_ITEMS);
       }
