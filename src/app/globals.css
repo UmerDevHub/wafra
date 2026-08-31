@@ -149,3 +149,24 @@
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+@keyframes marqueeReviews {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-reviews {
+  display: flex;
+  width: max-content;
+  animation: marqueeReviews 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-reviews:hover,
+.animate-marquee-reviews:active {
+  animation-play-state: paused;
+}

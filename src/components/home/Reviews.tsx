@@ -116,16 +116,44 @@ export default function Reviews() {
         </div>
       </div>
 
-      {/* Horizontal Scrollable Carousel */}
+      {/* Mobile-Only Continuous Sliding Marquee */}
+      <div className="block sm:hidden relative w-full overflow-hidden py-2">
+        {/* Soft edge gradients for a sleek fade-in/fade-out aesthetic */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-[#FAF6F1] to-transparent z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-[#FAF6F1] to-transparent z-10" />
+
+        <div className="animate-marquee-reviews flex gap-4">
+          {/* First set of reviews */}
+          {filteredReviews.map((testimonial, idx) => (
+            <div
+              key={`m-1-${testimonial.id}-${idx}`}
+              className="shrink-0 w-[290px]"
+            >
+              <ReviewCard testimonial={testimonial} />
+            </div>
+          ))}
+          {/* Duplicate set for seamless continuous loop */}
+          {filteredReviews.map((testimonial, idx) => (
+            <div
+              key={`m-2-${testimonial.id}-${idx}`}
+              className="shrink-0 w-[290px]"
+            >
+              <ReviewCard testimonial={testimonial} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop / Tablet Scrollable Carousel */}
       <div
         ref={scrollContainerRef}
-        className="flex gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory scrollbar-none scroll-smooth"
+        className="hidden sm:flex gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory scrollbar-none scroll-smooth"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {filteredReviews.map((testimonial) => (
           <div
             key={testimonial.id}
-            className="snap-start shrink-0 w-[88%] sm:w-[350px] md:w-[380px]"
+            className="snap-start shrink-0 sm:w-[350px] md:w-[380px]"
           >
             <ReviewCard testimonial={testimonial} />
           </div>
