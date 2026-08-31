@@ -68,34 +68,60 @@ export default function LaunchOfferBanner() {
   }
 
   return (
-    <div className="bg-sand border-b border-[#EFEAE3] py-2 px-4 text-center">
-      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm text-ink">
-        <div className="flex items-center gap-1.5 font-medium">
-          <Sparkles className="w-3.5 h-3.5 text-terracotta" />
-          <span>Launch Celebration Offers</span>
-        </div>
-
-        <span className="hidden sm:inline text-body/40">·</span>
-
-        <div className="flex items-center gap-2 font-medium">
-          <Clock className="w-3.5 h-3.5 text-body/70" />
-          <span className="text-body">Launch Special Ends In:</span>
-          <div className="flex items-center gap-1 font-bold text-terracotta">
-            <span className="bg-white px-1.5 py-0.5 rounded border border-[#E8DACB] shadow-2xs">
+    <div className="bg-[#FAF6F1] border-b border-[#E5E1DC] py-1.5 sm:py-2 px-3 text-center">
+      <div className="max-w-7xl mx-auto flex items-center justify-center text-xs sm:text-sm text-[#1F1B18]">
+        {/* Mobile View: Concise, Single Clean Line */}
+        <div className="flex sm:hidden items-center justify-center gap-1.5 text-[11px] font-medium">
+          <Sparkles className="w-3 h-3 text-[#C1663B] shrink-0" />
+          <span className="font-bold text-[#1F1B18] whitespace-nowrap">Launch Ends:</span>
+          <div className="flex items-center gap-0.5 font-bold text-[#C1663B] text-[10px]">
+            <span className="bg-white px-1 py-0.5 border border-[#E5E1DC] leading-none">
               {timeLeft.days}d
             </span>
-            <span>:</span>
-            <span className="bg-white px-1.5 py-0.5 rounded border border-[#E8DACB] shadow-2xs">
+            <span className="text-[#6E675F]">:</span>
+            <span className="bg-white px-1 py-0.5 border border-[#E5E1DC] leading-none">
               {String(timeLeft.hours).padStart(2, "0")}h
             </span>
-            <span>:</span>
-            <span className="bg-white px-1.5 py-0.5 rounded border border-[#E8DACB] shadow-2xs">
+            <span className="text-[#6E675F]">:</span>
+            <span className="bg-white px-1 py-0.5 border border-[#E5E1DC] leading-none">
               {String(timeLeft.minutes).padStart(2, "0")}m
             </span>
-            <span>:</span>
-            <span className="bg-white px-1.5 py-0.5 rounded border border-[#E8DACB] shadow-2xs">
+            <span className="text-[#6E675F]">:</span>
+            <span className="bg-white px-1 py-0.5 border border-[#E5E1DC] leading-none">
               {String(timeLeft.seconds).padStart(2, "0")}s
             </span>
+          </div>
+        </div>
+
+        {/* Desktop View: Full Spacious Layout */}
+        <div className="hidden sm:flex items-center justify-center gap-3 text-xs sm:text-sm">
+          <div className="flex items-center gap-1.5 font-medium">
+            <Sparkles className="w-3.5 h-3.5 text-[#C1663B]" />
+            <span className="font-semibold">Launch Celebration Offers</span>
+          </div>
+
+          <span className="text-[#6E675F]/50">·</span>
+
+          <div className="flex items-center gap-2 font-medium">
+            <Clock className="w-3.5 h-3.5 text-[#6E675F]" />
+            <span className="text-[#6E675F]">Launch Special Ends In:</span>
+            <div className="flex items-center gap-1 font-bold text-[#C1663B] text-xs">
+              <span className="bg-white px-1.5 py-0.5 border border-[#E5E1DC]">
+                {timeLeft.days}d
+              </span>
+              <span>:</span>
+              <span className="bg-white px-1.5 py-0.5 border border-[#E5E1DC]">
+                {String(timeLeft.hours).padStart(2, "0")}h
+              </span>
+              <span>:</span>
+              <span className="bg-white px-1.5 py-0.5 border border-[#E5E1DC]">
+                {String(timeLeft.minutes).padStart(2, "0")}m
+              </span>
+              <span>:</span>
+              <span className="bg-white px-1.5 py-0.5 border border-[#E5E1DC]">
+                {String(timeLeft.seconds).padStart(2, "0")}s
+              </span>
+            </div>
           </div>
         </div>
       </div>
