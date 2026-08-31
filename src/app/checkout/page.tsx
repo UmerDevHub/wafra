@@ -181,9 +181,9 @@ export default function CheckoutPage() {
 
   return (
     <main className="min-h-screen bg-[#FAF6F1] text-[#1F1B18] font-sans pb-24">
-      {/* Real Shopify-Style Step Progress Bar */}
-      <div className="bg-white border-b border-[#E5E1DC] py-3 px-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between text-xs font-bold uppercase tracking-wider">
+      {/* Step Progress Bar — padding matches header for alignment with logo */}
+      <div className="bg-white border-b border-[#E5E1DC] py-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between text-xs font-bold uppercase tracking-wider">
           <div className="flex items-center gap-2 sm:gap-4 text-[#1F1B18]">
             <span className="text-[#C1663B]">1. Information</span>
             <span className="text-[#6E675F]">→</span>
@@ -200,7 +200,8 @@ export default function CheckoutPage() {
       </div>
 
       {/* Mobile Collapsible Order Summary Banner */}
-      <div className="lg:hidden bg-white border-b border-[#E5E1DC] px-4 py-3">
+      <div className="lg:hidden bg-white border-b border-[#E5E1DC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <button
           type="button"
           onClick={() => setMobileSummaryOpen(!mobileSummaryOpen)}
@@ -223,6 +224,7 @@ export default function CheckoutPage() {
             />
           </div>
         )}
+        </div>
       </div>
 
       {/* Main 2-Column Grid Container */}
