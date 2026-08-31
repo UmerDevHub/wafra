@@ -181,8 +181,8 @@ export const bestSellersData: Product[] = [
         answer: "Simply place your order online without entering credit card details. You pay the exact amount in cash directly to the courier upon delivery.",
       },
       {
-        question: "What is the warranty policy?",
-        answer: "All neck fans include a 1-Year Quality Warranty and a 7-Day Hassle-Free Exchange Guarantee across all UAE Emirates.",
+        question: "How can I contact customer support?",
+        answer: "Our dedicated UAE customer support team is available via WhatsApp to assist with fast order tracking, delivery scheduling, and questions.",
       },
     ],
   },

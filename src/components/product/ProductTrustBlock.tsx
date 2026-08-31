@@ -39,12 +39,12 @@ export default function ProductTrustBlock({ stockCount }: ProductTrustBlockProps
 
         <div className="bg-[#FAF6F1] p-2.5 border border-[#E5E1DC] flex items-center gap-2">
           <ShieldCheck className="w-4 h-4 text-[#C1663B] shrink-0 stroke-[1.5]" />
-          <span className="text-[11px] leading-tight font-bold">1-Year Quality Warranty</span>
+          <span className="text-[11px] leading-tight font-bold">Genuine Quality Guaranteed</span>
         </div>
 
         <div className="bg-[#FAF6F1] p-2.5 border border-[#E5E1DC] flex items-center gap-2">
-          <RotateCcw className="w-4 h-4 text-[#C1663B] shrink-0 stroke-[1.5]" />
-          <span className="text-[11px] leading-tight font-bold">Easy 7-Day Returns</span>
+          <Truck className="w-4 h-4 text-[#C1663B] shrink-0 stroke-[1.5]" />
+          <span className="text-[11px] leading-tight font-bold">Inspect Upon Delivery</span>
         </div>
       </div>
 

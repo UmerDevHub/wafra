@@ -20,8 +20,8 @@ export default function ProductFAQ({ faqs: initialFaqs, productName }: ProductFA
       answer: "Simply complete your order online without entering card details. Our courier delivers your parcel and collects cash directly at your doorstep.",
     },
     {
-      question: "What is the warranty and return policy?",
-      answer: `The ${productName} comes with a 1-Year Quality Warranty and a 7-day hassle-free exchange policy. If you have any issue, contact our support team via WhatsApp for instant assistance.`,
+      question: "What if I need assistance with my order?",
+      answer: `Our dedicated UAE customer support team is readily available via WhatsApp to assist with tracking, delivery coordination, and any questions about your ${productName}.`,
     },
     {
       question: "Are there any hidden fees or extra delivery charges?",
